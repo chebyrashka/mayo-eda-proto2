@@ -1,5 +1,21 @@
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // ---- filtered video background ----
+  const bgVideo = document.getElementById('bgVideo');
+  const backgroundMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function syncBackgroundVideo(){
+    if(backgroundMotion.matches || document.hidden){
+      bgVideo.pause();
+      return;
+    }
+    bgVideo.play().catch(() => {});
+  }
+  backgroundMotion.addEventListener('change', syncBackgroundVideo);
+  document.addEventListener('visibilitychange', syncBackgroundVideo);
+  document.addEventListener('pointerdown', syncBackgroundVideo, { once:true });
+  document.addEventListener('keydown', syncBackgroundVideo, { once:true });
+  syncBackgroundVideo();
+
   // ---- clock ----
   function tick(){
     const d = new Date();
