@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXIS — Console</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<video id="bgVideo" autoplay muted loop playsinline src="./assets/background.mp4"></video>
+
+<div id="boot"><div id="boot-text"><span class="cursor"></span></div></div>
+
+<div id="view-console">
+  <header>
+    <div class="callsign">AXIS<span>::</span>DATA</div>
+    <div class="status-group">
+      <div><span class="status-dot"></span>SYSTEM NOMINAL</div>
+      <div id="clock">--:--:-- UTC</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1>One console for everything Axis runs.</h1>
+      <p>Ask the console a question, or open a sector on the map to browse the full guide — data services, products, and training all report through the same console.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="radar"></div>
+      <svg class="lines" id="svgLines" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <line id="lineA" x1="16" y1="18" x2="50" y2="50"/>
+        <line id="lineB" x1="84" y1="18" x2="50" y2="50"/>
+        <line id="lineC" x1="16" y1="82" x2="50" y2="50"/>
+        <line id="lineD" x1="84" y1="82" x2="50" y2="50"/>
+      </svg>
+
+      <div class="node" id="nodeA">
+        <div class="node-tag">SECTOR: SVC</div>
+        <h3>Data Services</h3>
+        <p>Managed pipelines, integration, and governance for enterprise data at scale.</p>
+        <button data-topic="services">Open channel</button>
+      </div>
+
+      <div class="node" id="nodeB">
+        <div class="node-tag">SECTOR: PRD</div>
+        <h3>Products</h3>
+        <p>Platforms your teams deploy directly — dashboards, APIs, embedded analytics.</p>
+        <button data-topic="products">Open channel</button>
+      </div>
+
+      <div class="console" id="console">
+        <div class="console-head">
+          <span><strong>MISSION CONSOLE</strong> · channel open</span>
+          <span>agent: axis-01</span>
+        </div>
+        <div id="transcript" role="log" aria-live="polite" aria-label="Conversation">
+          <div class="msg agent"><span class="who">AXIS</span>Connection established. Ask about data services, products, or training — or open a sector on the map to browse the full guide.</div>
+        </div>
+        <div class="console-input">
+          <input type="text" id="chatInput" aria-label="Ask the AXIS console" placeholder="Type a question, e.g. &quot;what data services do you offer?&quot;" />
+          <button id="sendBtn">SEND</button>
+        </div>
+      </div>
+
+      <div class="node" id="nodeC">
+        <div class="node-tag">SECTOR: EDU</div>
+        <h3>Education</h3>
+        <p>Training, certification, and hands-on learning paths for data teams.</p>
+        <button data-topic="education">Open channel</button>
+      </div>
+
+      <div class="node" id="nodeD">
+        <div class="node-tag">SECTOR: —</div>
+        <h3>Open Sector</h3>
+        <p>Reserved for what's next.</p>
+        <button disabled>Coming online</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+  <footer class="console-footer">AXIS console · demo data shown throughout · prototype build</footer>
+</div>
+
+<div id="view-detail"></div>
+
+<script src="./app.js" defer></script>
+
+</body>
+</html>
