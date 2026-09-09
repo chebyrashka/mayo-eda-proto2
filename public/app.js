@@ -59,8 +59,8 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   const replies = {
     services: "Find Data covers managed pipelines, system integration, and governance frameworks built for enterprise scale. Open the sector on the map for the full guide.",
     products: "Products is what your teams touch directly: dashboards, APIs, and embedded analytics you can drop into existing workflows. Open the sector on the map for the full guide.",
-    education: "Education includes structured training paths and certification tracks for data teams. Open the sector on the map for the full guide.",
-    fallback: "I can walk you through three sectors: Find Data, Products, or Education. Which one do you want to open?"
+    education: "Learning & Development includes structured training paths and certification tracks for data teams. Open the sector on the map for the full guide.",
+    fallback: "I can walk you through three sectors: Find Data, Products, or Learning & Development. Which one do you want to open?"
   };
 
   function addMessage(text, who){
@@ -152,8 +152,8 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
     },
     education: {
       accent: 'var(--yellow)',
-      eyebrow: 'SECTOR: EDU',
-      title: 'Education',
+      eyebrow: 'SECTOR: L&D',
+      title: 'Learning & Development',
       subtitle: 'Structured training paths and certification tracks for data teams who need real skills, not just documentation.',
       cta: 'Browse learning tracks',
       features: [
