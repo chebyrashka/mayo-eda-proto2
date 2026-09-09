@@ -65,7 +65,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 
   function addMessage(text, who){
     const div = document.createElement('div');
-    div.className = 'msg ' + (who === 'AXIS' ? 'agent' : 'user');
+    div.className = 'msg ' + (who === 'EDA' ? 'agent' : 'user');
     const label = document.createElement('span');
     label.className = 'who';
     label.textContent = who;
@@ -85,7 +85,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
     else if(/product|dashboard|api|analytic/.test(lower)) topic = 'products';
     else if(/educat|train|learn|course|certif/.test(lower)) topic = 'education';
     highlightLine(topic);
-    setTimeout(() => addMessage(topic ? replies[topic] : replies.fallback, 'AXIS'), 350);
+    setTimeout(() => addMessage(topic ? replies[topic] : replies.fallback, 'EDA'), 350);
   }
   function sendMessage(text){
     if(!text.trim()) return;
