@@ -1,17 +1,5 @@
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---- background video: attempt autoplay, fall back to first-interaction ----
-  const bgVideo = document.getElementById('bgVideo');
-  function tryPlay(){
-    const p = bgVideo.play();
-    if(p && p.catch) p.catch(() => {
-      const startOnInteract = () => { bgVideo.play(); };
-      document.addEventListener('click', startOnInteract, { once:true });
-      document.addEventListener('touchstart', startOnInteract, { once:true });
-    });
-  }
-  tryPlay();
-
   // ---- clock ----
   function tick(){
     const d = new Date();

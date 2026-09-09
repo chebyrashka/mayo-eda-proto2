@@ -16,7 +16,8 @@ Requires Node.js 20+ and Python 3. There are no package dependencies to install.
 - `public/index.html`: console markup.
 - `public/styles.css`: styles extracted from the supplied file.
 - `public/app.js`: scripted chat and sector navigation.
-- `public/assets/background.mp4`: video extracted from the supplied embedded asset.
+- `public/particles.js`: subtle floating particle background; static for reduced motion and paused in hidden tabs.
+- `public/assets/background.mp4`: original decoded video retained for reference; not loaded by the page. It shows blue particle trails, a horizontal glow, and a visible timecode. Its original negative stacking order placed it behind the opaque page background.
 - `reference/axis-entry-v3.html`: unchanged original for comparison, excluded from the public build.
 
 The import separates the original single file into editable assets. Chat messages now render as text to prevent typed HTML from becoming executable markup. The input and conversation log have accessible labels.

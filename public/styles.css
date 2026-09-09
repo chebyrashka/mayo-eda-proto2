@@ -29,14 +29,16 @@
     overflow-x:hidden;
   }
 
-  #bgVideo{
+  #backgroundParticles{
     position:fixed;
     inset:0;
     width:100%;
     height:100%;
-    object-fit:cover;
-    z-index:-2;
+    pointer-events:none;
+    z-index:0;
   }
+
+  #view-console, #view-detail{ position:relative; z-index:1; }
 
   a{ color:inherit; }
 
