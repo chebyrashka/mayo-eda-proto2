@@ -21,8 +21,12 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
 
   // ---- ticker ----
   const tickerItems = [
-    'PIPELINES ACTIVE: 128','UPTIME: 99.98%','LEARNERS ONLINE: 342',
-    'LAST SYNC: 2s ago','OPEN INTEGRATIONS: 47','QUEUE DEPTH: nominal'
+    'Active data stewards: 212',
+    'Epic Clarity tables: 22,000',
+    'SQL data sets: 1,012',
+    'APIs deployed: 721',
+    'LPR event live streams: 16',
+    'PubMed citations: 38 M'
   ];
   const tickerEl = document.getElementById('ticker');
   const full = [...tickerItems, ...tickerItems].map(t => `<span class="dim">›</span> ${t}`).join('<span class="dim">&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;</span>');
