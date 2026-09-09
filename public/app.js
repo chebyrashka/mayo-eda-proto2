@@ -57,10 +57,10 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   const lineMap = { services:'lineA', products:'lineB', education:'lineC' };
 
   const replies = {
-    services: "Data Services covers managed pipelines, system integration, and governance frameworks built for enterprise scale. Open the sector on the map for the full guide.",
+    services: "Find Data covers managed pipelines, system integration, and governance frameworks built for enterprise scale. Open the sector on the map for the full guide.",
     products: "Products is what your teams touch directly: dashboards, APIs, and embedded analytics you can drop into existing workflows. Open the sector on the map for the full guide.",
     education: "Education includes structured training paths and certification tracks for data teams. Open the sector on the map for the full guide.",
-    fallback: "I can walk you through three sectors: Data Services, Products, or Education. Which one do you want to open?"
+    fallback: "I can walk you through three sectors: Find Data, Products, or Education. Which one do you want to open?"
   };
 
   function addMessage(text, who){
@@ -81,7 +81,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
   function respondTo(text){
     const lower = text.toLowerCase();
     let topic = null;
-    if(/service|pipeline|integrat|governance/.test(lower)) topic = 'services';
+    if(/find data|service|pipeline|integrat|governance/.test(lower)) topic = 'services';
     else if(/product|dashboard|api|analytic/.test(lower)) topic = 'products';
     else if(/educat|train|learn|course|certif/.test(lower)) topic = 'education';
     highlightLine(topic);
@@ -113,7 +113,7 @@ const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').mat
     services: {
       accent: 'var(--green)',
       eyebrow: 'SECTOR: SVC',
-      title: 'Data Services',
+      title: 'Find Data',
       subtitle: 'Managed pipelines, integration, and governance — built to run enterprise data at scale, end to end.',
       cta: 'Talk to a data services specialist',
       features: [
